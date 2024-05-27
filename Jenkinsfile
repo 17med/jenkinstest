@@ -2,8 +2,19 @@ pipeline {
   agent any
   stages {
     stage('Checkout Code') {
-      steps {
-        git(url: 'https://github.com/17med/jenkinstest', branch: 'main', poll: true)
+      parallel {
+        stage('Checkout Code') {
+          steps {
+            git(url: 'https://github.com/17med/jenkinstest', branch: 'main', poll: true)
+          }
+        }
+
+        stage('test') {
+          steps {
+            echo 'hello'
+          }
+        }
+
       }
     }
 
