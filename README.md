@@ -15,4 +15,11 @@ This project demonstrates how to set up a simple Flask application and integrate
 
 - Docker
 - Jenkins
-
+# Build Image
+```shell
+docker build -t flask-server .
+```
+# Create Container
+```shell
+docker run -p 5000:5000 flask-app
+```
