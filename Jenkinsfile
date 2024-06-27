@@ -18,5 +18,11 @@ pipeline {
       }
     }
 
+    stage('verify') {
+      steps {
+        sh 'ls'
+      }
+    }
+
   }
 }
